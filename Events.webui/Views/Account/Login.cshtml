@@ -1,0 +1,41 @@
+@model Login
+<div class="row d-flex justify-content-center">
+    <img class="artistimg" src="~/ticket/111.jpg" alt="">
+    <div class="col-md-9">
+        <div class="loginform d-flex justify-content-center">
+            <div class="col-md-6 loginfont">
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-2">
+                            <label class="mb-4 op" for="">Giriş</label>
+                        </div>
+                    </div>
+                    <hr style="color: gray;">
+                    <div class="mb-2">
+                        <input asp-for="Email" class="form-control logininput rounded-0" placeholder="E-posta adresinizi giriniz..">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                     <div class="mt-4">
+                        <input  asp-for="Password" class="form-control logininput rounded-0" placeholder="Şifrenizi giriniz..">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-info" type="submit">Giriş Yap</button>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-between">
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Beni Hatırla
+                            </label>
+                        </div>
+                        <div>
+                            <a asp-controller="Account" asp-action="Logout" class="nav-link loginfont">Şifremi unuttum</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

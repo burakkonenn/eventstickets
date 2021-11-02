@@ -1,0 +1,62 @@
+@model List<EventModel>
+
+
+<div class="container-fluid">
+    <div class="row mt-3">
+         <div class="app">
+            <img src="~/ticket/main2.jpg" class="artistimg" alt="">
+        </div>
+       <div class="firstrow  mt-4">
+            <div class="col-md-12">
+            <h2 style="color: white;">Etkinlik Listesi</h2>
+            <hr style="color: turquoise;">
+            <div class="col-md-2">
+                <a asp-controller="Admin" asp-action="EventCreate" class="nav-link mb-4" style="color: turquoise;">Etkinlik Ekle ></a>
+            </div>
+                <table class="table-sm  table table-bordered tabletrs">
+                    <thead class="">
+                        <tr style="color: white;">
+                            <td style="width: 20px;">Id</td>
+                            <td style="width: 30px;">Etkinlik Adı</td>
+                            <td style="width: 100px;">Etkinlikte Yer Alacak Sanatçılar</td>
+                            <td style="width: 80px;">Etkinlik Tarihleri</td>
+                            <td style="width: 80px;">Mekan Adı</td>
+                            <td style="width: 50px;">Tür</td>
+                            <td style="width: 30px;">Şehir</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                             <tr>
+                                <td>@item.EventId</td>
+                                <td>@item.EventName</td>
+                                @foreach (var items in item.ArtistName)
+                                {
+                                    <td>@items.Name</td>
+                                }
+                                <td>@item.EventDates</td>
+                                <td>@item.EventVenue
+                                    <img src="~/clubs/@item.VenueImage" class="float-end" width="80" alt="">    
+                                </td>
+                                <td>@item.EventGenre</td>
+                                <td>@item.EventCity</td>
+                                <td  style="width: 30px;">
+                                    <a href="/admin/eventedit/@item.EventId" class="btn btn-outline-info float-end ms-2">Düzenle</a>
+
+                                    <form action="/admin/eventdelete" method="POST" style="display: inline;">
+                                        <input type="hidden" name="EventId" value="@item.EventId">
+                                        <button type="submit" class="btn btn-outline-secondary float-end">Sil</button>
+                                    </form>
+                                </td>
+
+                             </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>
+

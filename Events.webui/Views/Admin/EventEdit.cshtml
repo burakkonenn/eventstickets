@@ -1,0 +1,51 @@
+@model CreateEventModel
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="app">
+        <img src="~/ticket/111.jpg" class="artistimg" alt="">
+    </div>
+    <div class="firstrow">
+         <div class="col-md-12">
+             <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="col-md-6 p-3 them">
+            <h2 style="color: white;" class="mb-5">Yeniden Düzenle </h2>
+            <form asp-controller="Admin" asp-action="EventEdit" method="post">
+                <input type="hidden" name="Id" value="@Model.Id">
+                <div class="mb-2">
+                    <label asp-for="Name" class="form-label" style="color: gray;">Organizasyon Adı</label>
+                    <input asp-for="Name" type="text" class="form-control inttrs shadows" id="">
+                </div>
+                 <div class="mb-5">
+                    <label asp-for="Image" class="form-label"  style="color: gray;">Organizasyon Fotoğrafı</label>
+                    <input asp-for="Image" class="form-control inttrs shadows" id="">
+                </div>
+               <div class="mb-3">
+                   <select asp-for="GenresId" asp-items="@ViewBag.SelectedGenre" class="form-select inttrs shadowss">
+                            <option selected>Tür Seçiniz</option>
+                    </select>
+               </div>
+               <div class="mb-3">
+                    <select asp-for="VenueId" asp-items="@ViewBag.SelectedVenue" class="form-select inttrs shadows">
+                        <option selected>Mekan Seçiniz</option>
+                    </select>    
+               </div>
+               <div class="mb-5">
+                       <select asp-for="CitiesId" asp-items="@ViewBag.SelectedCity" class="form-select inttrs shadows">
+                            <option selected>Şehir Seçiniz</option>
+                        </select>
+               </div>
+                <div class="mb-2">
+                    <label asp-for="DateId" class="form-label"  style="color: gray;">Tarih</label>
+                    <input asp-for="DateId" class="form-control inttrs shadows" id="">
+                </div>
+                 <div class="mb-2">
+                    <label asp-for="Url" class="form-label"  style="color: gray;">Url</label>
+                    <input asp-for="Url" class="form-control inttrs shadows" id="">
+                </div>
+                <button type="submit" class="btn btn-info">Kaydet</button>
+            </form>
+        </div> 
+    </div>
+</div>
+  

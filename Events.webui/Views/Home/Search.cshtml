@@ -1,0 +1,44 @@
+@model EventSearchModel
+
+ <div class="row d-flex justify-content-center mt-4">
+    <div class="rowart">
+            <img src="~/ticket/main2.jpg" class="artistimg" alt="">
+    </div>
+    <div class="col-md-5" style="background-color: black;">
+        <h2 style="color: gray;">Etkinlik Bilgileri</h2>
+        @foreach (var item in Model.Events)
+        {
+            <a href="" style="font-size:20px; text-decoration: none; color:gray;">@item.Name</a>
+            <hr>
+            <h2 class="mt-3">Sanatçılar</h2>
+            @foreach (var items in item.Artists)
+            {
+                <h2>@items.Name</h2>
+            }
+            <hr>
+            <div class="card border-0">
+                <div class="row d-flex justify-content-between cards">
+                    <div class="col-md-12">
+                       <div class="rounded-pill">
+                            <div>
+                                <span class="card-text">Mekan:</span>
+                                <span>@item.Venue.Name</span>
+                            </div>
+                            <div>
+                                <span class="card-text">Adres:</span>
+                                <span>@item.Venue.Address</span>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        }
+  
+    </div>
+    <div class="col-md-5">
+        @foreach (var item in Model.Events)
+        {
+            <a href=""><img src="~/ticket/@item.Image" class="card-img-top" alt=""></a>
+        }
+    </div>
+</div>

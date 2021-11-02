@@ -1,0 +1,35 @@
+@model CreateVenueModel
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="app">
+        <img src="~/ticket/111.jpg" class="artistimg" alt="">
+    </div>
+    <div class="firstrow">
+         <div class="col-md-12">
+             <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="col-md-6 p-3 them">
+            <h2 style="color: white;" class="mb-5">Mekan Ekle</h2>
+            <form asp-controller="Admin" asp-action="VenueCreate" method="post">
+                <div class="mb-2">
+                    <label asp-for="Name" class="form-label" style="color: gray;">Mekan Adı</label>
+                    <input asp-for="Name" class="form-control inttrs shadows" id="">
+                </div>
+                <div class="mb-5">
+                    <label asp-for="Image" class="form-label"  style="color: gray;">Mekan Fotoğrafı</label>
+                    <input asp-for="Image" class="form-control inttrs shadows" id="">
+                </div>
+                 <div class="mb-5">
+                    <label asp-for="Address" class="form-label"  style="color: gray;">Adres</label>
+                    <textarea asp-for="Address" class="form-control inttrs shadows"></textarea>
+                </div>
+                 <div class="mb-2">
+                    <label asp-for="Url" class="form-label"  style="color: gray;">Url</label>
+                    <input asp-for="Url" class="form-control inttrs shadows" id="">
+                </div>
+                <button type="submit" class="btn btn-info">Kaydet</button>
+            </form>
+        </div> 
+    </div>
+</div>
+  

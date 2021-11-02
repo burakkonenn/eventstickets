@@ -1,0 +1,37 @@
+
+
+<div class="container">
+    <div class="row d-flex justify-content-between mt-4">
+        <div class="rowart">
+                <img src="~/ticket/main2.jpg" class="artistimg" alt="">
+        </div>
+        <div class="col-md-4">
+        @foreach (var item in (List<Venue>)ViewBag.SearchVenue)
+        {
+            <div class="card crds">
+               <a href=""> <img src="~/clubs/@item.Image" style="height:300px;" class="card-img-top" alt=""></a>
+                <div class="card-body">
+                    <h3 class="card-text">@item.Name</h3>
+                    <p class="card-title">@item.Address</p>
+                </div>
+            </div>
+        }
+        </div>
+        <div class="col-md-8">
+            <div class="accordion">
+                <div class="accordion-item accordiontrans">
+                    <h2 class="accordion-header accordiontrans">
+                        <button class="accordion-button accordionbtns" data-bs-toggle="collapse"data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            About The Clubs
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show " aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>    

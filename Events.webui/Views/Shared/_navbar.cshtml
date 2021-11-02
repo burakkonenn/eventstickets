@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg border-top-0 border-end-0 border-start-0 navbr border border-info">
+  <div class="container-fluid">
+        <a class="navbar-brand ms-3 Brand" href="/">BLACKOUT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavMenu" aria-controls="NavMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">X</span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="NavMenu">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 .navb">
+                    <li class="nav-item ms-5 ">
+                        <a class="nav-link clr" href="/">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link clr" href="#">Magazin</a>
+                    </li>
+                    <li class="nav-item  ms-5">
+                        <a class="nav-link clr" asp-controller="Home" asp-action="Events">Etkinlikler</a>
+                    </li>
+                    <li class="nav-item  ms-5">
+                        <a asp-controller="Home" asp-action="Venue" class="nav-link clr">Mekanlar</a>
+                    </li>
+                    <li class="nav-item  ms-5">
+                        <a asp-controller="Home" asp-action="Artist" class="nav-link clr" >Artistler</a>
+                    </li>
+                    <li class="nav-item  ms-5">
+                        <a asp-controller="Admin" asp-action="Admin" class="nav-link clr">ADMİN PANEL</a>
+                    </li>
+            </ul>
+            <form class="d-flex">
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <a href="" class="nav-link" style="text-decoration: none; color:yellow">@User.Identity.Name</a>
+                    <a asp-controller="Account" asp-action="Logout" class="btn btn-outline-info lgn">Çıkış Yap</a>
+                }
+                else
+                {
+                     <a asp-controller="Account" asp-action="Login" class="btn btn-outline-info lgn">Giriş Yap</a>
+                     <a asp-controller="Account" asp-action="Register" class="btn btn-outline-success ms-2 lgn">Kayıt Ol</a>
+                }
+               
+            </form>
+        </div>
+  </div>
+</nav>

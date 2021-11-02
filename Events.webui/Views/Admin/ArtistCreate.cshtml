@@ -1,0 +1,50 @@
+@model ArtistModel
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="app">
+        <img src="~/ticket/111.jpg" class="artistimg" alt="">
+    </div>
+    <div class="firstrow ">
+         <div class="col-md-12">
+             <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        
+        <div class="col-md-6 p-4 them">
+            <h2 style="color: white;" class="mb-3">Sanatçı Ekle</h2>
+            <form asp-controller="Admin" asp-action="ArtistCreate" method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label" style="color: gray;">Artist Adı</label>
+                    <input asp-for="Name" type="text" class="form-control inttrs" id="">
+                </div>
+                 <div class="mb-3">
+                    <label asp-for="Image" class="form-label"  style="color: gray;">Artist Fotoğrafı</label>
+                    <input asp-for="Image" class="form-control inttrs" id="">
+                </div>
+                 <div class="mb-3">
+                    <label asp-for="Country" class="form-label"  style="color: gray;">Ülkesi</label>
+                    <input asp-for="Country" class="form-control inttrs" id="">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="GenresId" class="form-label"  style="color: gray;">Tür</label>
+                    <select asp-for="GenresId" asp-items="@ViewBag.SelectGenres" class="form-select inttrs">
+                        <option selected>Tür Seçiniz</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EventId" class="form-label"  style="color: gray;">Çalacağı Etkinlik</label>
+                     <select asp-for="EventId" asp-items="@ViewBag.SelectEvent" class="form-select inttrs">
+                        <option selected>Etkinlik Seçiniz</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Url" class="form-label"  style="color: gray;">Url</label>
+                    <input asp-for="Url" class="form-control inttrs" id="">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-info">Kaydet</button>
+            </form>
+        </div> 
+    </div>
+</div>
+  

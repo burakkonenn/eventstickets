@@ -1,0 +1,55 @@
+@model IEnumerable<Venue>
+
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="app">
+        <img src="~/ticket/main2.jpg" class="artistimg" alt="">
+    </div>
+       <div class="firstrow  mt-4">
+           <div class="col-md-12">
+            <h2 style="color: white;">Mekan Listesi</h2>
+            <hr style="color: turquoise;">
+            <div class="col-md-2">
+                <a asp-controller="Admin" asp-action="VenueCreate" class="nav-link mb-4" style="color: turquoise;">Mekan Ekle ></a>
+            </div>
+         <div class="col-md-12">
+             <table class="table-sm  table table-bordered tabletrs">
+                 <thead>
+                     <tr style="color: white;">
+                         <td>Id</td>
+                         <td>Mekan Adı</td>
+                         <td>Adres</td>
+                         <td>Fotoğraf</td>
+                         <td>Gerçekleşecek Etkinlikler</td>
+                         <td></td>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     @foreach (var item in Model)
+                     {
+                         <tr>
+                             <td>@item.Id</td>
+                             <td>@item.Name</td>
+                             <td>@item.Address</td>
+                             <td><img src="~/clubs/@item.Image" width="80" alt=""></td>
+                             <td>
+                                 @foreach (var items in item.Events)
+                                 {
+                                     @items.Name
+                                 }
+                             </td>
+                             <td>
+                                 <a asp-controller="Admin" asp-action="VenueEdit" asp-route-id="@item.Id" class="btn btn-outline-info float-end ms-2">Düzenle</a>
+                                 <form asp-controller="Admin" asp-action="VenueDelete">
+                                     <input type="hidden" name="venutId" value="@item.Id">
+                                     <button class="btn btn-outline-secondary float-end" type="submit">Sil</button>
+                                 </form>
+                             </td>
+                         </tr>
+                     }
+                 </tbody>
+             </table>
+        </div>
+        
+    </div>
+</div>

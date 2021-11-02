@@ -1,0 +1,131 @@
+@model EventDetails
+
+<div class="row d-flex justify-content-center mt-3">
+   <div class="col-md-12">
+       <div class="row d-flex justify-content-center mt-5">
+            <div class="col-lg-3">
+                <div class="input-group ">
+                    <span class="input-group-text border-0 spa"><i class="icn mt-1 fas fa-search spa"></i></span>
+                    <form action="/Search">
+                        <input name="q" type="text" class=" rounded-0 form-control inbg " placeholder="Artist,tür,mekan veya anahtar bir kelime giriniz.">
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3">
+               <div class="input-group mb-3">
+                    <label class="input-group-text border-0 slct" for="inputGroupSelect01"><i class="icn fas fa-map-marker-alt"></i></label>
+                    <select name="selectedValue" class="clr form-select  rounded-0 slct" id="select">
+                        <option selected>Tüm Şehirler</option>
+                        @foreach (var item in (List<CityModel>)ViewBag.Model)
+                        {
+                            <option value="">@item.CityName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                 <div class="input-group mb-3">
+                    <label class="input-group-text border-0 slct" for="inputGroupSelect01"><i class="icn far fa-calendar-alt"></i></label>
+                    <select class="clr form-select  rounded-0 slct" id="">
+                        <option selected>Tüm Zamanlar</option>
+                        @foreach (var item in (List<DateModel>)ViewBag.Dates)
+                        {
+                            <option value="">@item.DateName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+           
+        </div>
+   </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-5 content">
+    <div class="col-md-9">
+        <section id="slider">
+            <input type="radio" name="slider" id="s1">
+            <input type="radio" name="slider" id="s2">
+            <input type="radio" name="slider" id="s3">
+            <input type="radio" name="slider" id="s4">
+            <input type="radio" name="slider" id="s5">
+            <input type="radio" name="slider" id="s6">
+            <input type="radio" name="slider" id="s7">
+            <input type="radio" name="slider" id="s8">
+            <input type="radio" name="slider" id="s9">
+            <input type="radio" name="slider" id="s10">
+            
+            <label for="s1" id="slide1">
+                <img src="ticket/1.jpg" height="100%" width="800px"  alt="">
+            </label>
+            <label for="s2" id="slide2">
+                <img src="ticket/2.jpg" height="100%" width="800px"   alt="">
+            </label>
+            <label for="s3" id="slide3">
+                <img src="ticket/3.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s4" id="slide4">
+                <img src="ticket/4.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s5" id="slide5">
+                <img src="ticket/5.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s5" id="slide5">
+                <img src="ticket/6.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s5" id="slide5">
+                <img src="ticket/7.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s5" id="slide5">
+                <img src="ticket/8.jpg" height="100%"  width="800px"   alt="">
+            </label>
+            <label for="s5" id="slide5">
+                <img src="ticket/9.jpg" height="100%"  width="800px"   alt="">
+            </label>
+             <label for="s5" id="slide5">
+                <img src="ticket/10.jpg" height="100%"  width="800px"   alt="">
+            </label>
+        </section>
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-lg-9">
+        <span style="color: gray; font-size:35px;" class="me-3">Bu Hafta</span>
+        <span style="color: gray; font-size:20px;">1-7 Ekim</span>
+        <div class="row d-flex justify-content-between mt-3 RowBorder">
+                @foreach (var item in (List<DateModel>)ViewBag.Dates)
+                {
+                    <div class="col-md-1">
+                         <a  class="nav-link clr" style=" font-size:13px;">@item.Time</a> 
+                        <a id="Get" asp-controller="Home" asp-action="Index" asp-route-name="@item.DateName" class="clr nav-link">@item.DateName.ToUpper()</a> 
+                    </div> 
+                }
+        </div>
+    </div>
+</div> 
+
+<div id="rww" class="row d-flex justify-content-center mt-3 content">
+     <div class="col-md-9">
+        <div class="row mt-3">
+            @* @foreach (var item in Model.Event)
+            {
+               <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card slct border-0" style="width: 18rem;">
+                        <a  asp-controller="Home" asp-action="EventDetail" asp-route-url="@item.Url" ><img src="~/ticket/@item.Image" class="card-img-top" alt=""></a>
+                        <div class="card-body">
+                            <a href="" class="clr" style="text-decoration: none; font-size:15px;"><p>@item.Name</p></a>
+                            <hr>
+                            @* <span>Tarih: <a href="" class="clr ms-3" style="text-decoration: none; font-size:15px;">@item.Date.Time</a></span>
+                            <div>
+                                <span>Mekan: <a href=""class="clr ms-3" style="text-decoration: none; font-size:15px;">@item.Venue.Name</a></span>
+                            </div> *@
+                           @* <div class="d-grid gap-2">
+                                <a asp-controller="Home" asp-action="EventDetail" asp-route-url="@item.Url" class="btn btn-outline-warning mt-5">Satın Al</a>
+                            </div> *@
+                        </div>
+                    </div>
+               </div>
+            } 
+        </div>
+    </div>
+</div>   

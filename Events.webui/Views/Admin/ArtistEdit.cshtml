@@ -1,0 +1,46 @@
+@model ArtistModel
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="app">
+        <img src="~/ticket/111.jpg" class="artistimg" alt="">
+    </div>
+    <div class="firstrow">
+         <div class="col-sm-12">
+             <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="col-sm-12 p-3 them">
+            <h2 style="color: white;" class="mb-5">Yeniden Düzenle </h2>
+            <form asp-controller="Admin" asp-action="ArtistEdit" method="post">
+                <input type="hidden" name="Id" value="@Model.Id">
+                <div class="mb-2">
+                    <label asp-for="Name" class="form-label" style="color: gray;">Artist Adı</label>
+                    <input asp-for="Name" type="text" class="form-control inttrs shadows" id="">
+                </div>
+                <div class="mb-5">
+                    <label asp-for="Country" class="form-label"  style="color: gray;">Ülkesi</label>
+                    <input asp-for="Country" class="form-control inttrs shadows" id="">
+                </div>
+                 <div class="mb-5">
+                    <label asp-for="Image" class="form-label"  style="color: gray;">Ülkesi</label>
+                    <input asp-for="Image" class="form-control inttrs shadows" id="">
+                </div>
+               <div class="mb-3">
+                   <select asp-for="GenresId" asp-items="@ViewBag.SelectedGenres" class="form-select inttrs shadowss">
+                            <option selected>Tür Seçiniz</option>
+                    </select>
+               </div>
+               <div class="mb-3">
+                    <select asp-for="EventId" asp-items="@ViewBag.SelectedEvent" class="form-select inttrs shadows">
+                        <option selected>Etkinlik Seçiniz</option>
+                    </select>    
+               </div>
+                 <div class="mb-2">
+                    <label asp-for="Url" class="form-label"  style="color: gray;">Url</label>
+                    <input asp-for="Url" class="form-control inttrs shadows" id="">
+                </div>
+                <button type="submit" class="btn btn-info">Kaydet</button>
+            </form>
+        </div> 
+    </div>
+</div>
+  

@@ -1,0 +1,153 @@
+@model EventDetails 
+
+<div class="row app">
+    <img src="~/ticket/main.jpg" class="imgg" alt="">
+     <div class="firstrow row mt-4 d-flex justify-content-center">
+        <div class="col-md-8 d-flex align-items-center">
+            <span class="" style="color: white; font-size:40px;">Etkinlikler <span class="ms-5 brdr"></span></span>
+            <span><a href="" style="color: white; text-decoration:none; font-size:15px;" class="ms-4"> <span class="me-2" style="font-size: 15px;">+</span> Etkinlik Bildir</a></span>
+        </div>
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="row d-flex justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="input-group c">
+                                <span class=" input-group-text border-0 spans"><i class="spans icn mt-2 fas fa-search spa"></i></span>
+                                <form action="/Search">
+                                    <input name="q" type="text" class="rounded-0 form-control trs" placeholder="Artist,tür,mekan veya anahtar bir kelime giriniz.">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group mb-3">
+                                    <label class="input-group-text border-0 spans" for="inputGroupSelect01"><i class="icn fas fa-map-marker-alt"></i></label>
+                                    <select name="selectedValue" class="trs form-select  rounded-0" id="SelectedId">
+                                        <option selected>Tüm Şehirler</option>
+                                        @foreach (var item in (List<CityModel>)ViewBag.Model)
+                                        {
+                                            <option value="">@item.CityName</option>
+                                        }
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text border-0 spans" for="inputGroupSelect01"><i class="icn far fa-calendar-alt"></i></label>
+                                <select class="form-select  rounded-0 trs" id="">
+                                    <option selected>Tüm Zamanlar</option>
+                                    @foreach (var item in (List<DateModel>)ViewBag.Dates)
+                                    {
+                                        <option value="">@item.DateName</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+     <div class="secondrow row d-flex justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 me-auto d-flex align-items-center">
+                    <select style="width: 250px;" class="trs ms-4 form-select clr rounded-0" name="" id="">
+                        <option value="1">A-Z</option>
+                        <option value="2">Popülerliğe Göre</option>
+                        <option value="3">Tarihe göre(Önce en yakın etkinlik)</option>
+                        <option value="4">Tarihe göre(Önce en ileri tarihli etkinlik)</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-center slcbrdr">
+                    <span class="ms-auto"><i style="color: white;" class="me-2 fas fa-sort"></i></span>
+                    <button id="1" class="btn btn-dark btns border-0">Filtre</button>
+                </div>
+                <div class="col-md-2 d-flex align-items-center slcbrdr">
+                    <span class="ms-auto"><i style="color: white;" class="me-2 fas fa-list"></i></span>
+                    <button id="2"  class="btn btn-dark btns border-0">Liste</button>
+                </div>
+                <div class="col-md-2 d-flex align-items-center slcbrdr">
+                    <span class="ms-auto"><i style="color: white;" class="me-2 fas fa-calendar-alt"></i></span>
+                    <button class="btn btn-dark btns border-0">Takvim</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+    
+    <div id="row1" class="thirdrow row d-flex justify-content-center mt-5">
+        <div style="display: none;" id="show" class="col-md-8 hiderow">
+            <div class="row d-flex justify-content-between">
+                <div class="col-md-4 mt-2">
+                    <h4 style="color: white; font-size:15px;" class="mt-2">KATEGORİ</h4>
+                    <select class="form-select rounded-0 slct clr" name="" id="">
+                        <option value="">Seç</option>
+                            @foreach (var item in (List<Genre>)ViewBag.Genres)
+                            {
+                                <option value="">@item.Name</option>
+                            }
+                    </select>
+                </div> 
+                <div class="col-md-4 mt-2">
+                    <h4 style="color: white; font-size:15px;" class="mt-2">MEKAN</h4>
+                    <select class="form-select slct clr rounded-0" name="" id="">
+                        <option value="">Seç</option>
+                    </select>
+                </div>
+                <div class="col-md-2 mt-3">
+                    <button class="btn btn-info mt-4 border-0">UYGULA</button>
+                </div>
+                <div class="col-md-2 mt-3">
+                    <button class="btn btn-light mt-4 btt border-0">TEMİZLE</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div id="rw" class="row d-flex justify-content-center mt-3 shw2">
+        <div style="display: none;" class="col-md-9" id="show2">
+            <h2 style="color: white; font-size:20px;" class="ms-3">Etkinlikler (@Model.EventCount)</h2>
+            <div class="row mt-3">
+                
+                @foreach (var item in Model.Events)
+                {
+                <div class="col-md-4 d-flex justify-content-center">
+                        <div class="card slct border-0 mb-5" style="width: 18rem;">
+                            <a  asp-controller="Home" asp-action="EventDetail" asp-route-url="@item.Image" ><img src="~/ticket/@item.Image" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <a href="" class="clr" style="text-decoration: none; font-size:15px;"><p>@item.Name</p></a>
+                                <hr>
+                                <span>Tarih: <a href="" class="clr ms-3" style="text-decoration: none; font-size:15px;">@item.Date.Time</a></span>
+                                <div>
+                                    <span>Mekan: <a href=""class="clr ms-3" style="text-decoration: none; font-size:15px;">@item.Venue.Name</a></span>
+                                </div>
+                                <div class="d-grid gap-2">
+                                        <a asp-controller="Home" asp-action="EventDetail" asp-route-url="@item.Url" class="btn btn-outline-warning mt-5">Satın Al</a>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+                }
+            </div>
+        </div>
+
+   </div>
+
+</div>  
+
+
+@* Filtre  *@
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#1").click(function(){
+    $("#show").slideToggle("3000");
+  });
+});
+</script>
+@* Liste *@
+<script>
+    $(document).ready(function(){
+        $("#2").click(function(){
+            $("#show2").slideToggle("3000");
+        });
+    });
+</script>

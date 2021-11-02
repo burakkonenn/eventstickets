@@ -1,0 +1,64 @@
+@model Register
+
+
+<div class="row d-flex justify-content-center mt-3">
+    <img src="~/ticket/123.jpg" class="regim" alt="">
+    <div class="col-md-6 column">
+        <h2 class="loginfont mb-5">Kayıt Ol</h2>
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Name" class="loginfont" for="">İsim</label>
+                <input asp-for="Name" class="logininput rounded-0 form-control">
+                <span asp-validation-for="Name" ></span>
+                <hr>
+            </div>
+             <div class="mb-3">
+                <label asp-for="LastName" class="loginfont" for="">Soy isim</label>
+                <input asp-for="LastName" class="logininput rounded-0 form-control">
+                 <span asp-validation-for="LastName"></span>
+                <hr>
+            </div>
+             <div class="mb-3">
+                <label asp-for="UserName" class="loginfont" for="">Kullanıcı adı</label>
+                <input asp-for="UserName" class="logininput rounded-0 form-control">
+                 <span asp-validation-for="UserName"></span>
+                <hr>
+            </div>
+            
+             <div class="mb-3">
+                <label asp-for="Email" for="">E-Posta</label>
+                <input asp-for="Email" class="logininput rounded-0 form-control">
+                 <span asp-validation-for="Email"></span>
+                <hr>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="loginfont" for="">Şifre</label>
+                <input asp-for="Password" type="text" class="logininput rounded-0 form-control">
+                 <span asp-validation-for="Password"></span>
+                <hr>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PhoneNumber" class="loginfont mt-4" for="">Cep Telefonu</label>
+                <input asp-for="PhoneNumber" class="logininput rounded-0 form-control">
+                 <span asp-validation-for="PhoneNumber"></span>
+                <hr>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label loginfont" for="defaultCheck1">
+                    Kullanım Koşullarını ve Gizlilik Sözleşmesini okudum ve kabul ediyorum.
+                </label>
+            </div>
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-info" type="submit">Kayıt Ol</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

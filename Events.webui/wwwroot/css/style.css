@@ -1,0 +1,591 @@
+.b{
+    background-color: rgb(17, 15, 15);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    margin:0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.tabletrs{
+    color: rgb(119, 109, 109);
+    background-color: rgb(17, 15, 15);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.navbr{
+    background-color:#0c0b0b;
+}
+.regim{
+    filter: blur(10px);
+    opacity: 0.1;
+    height: 500px;
+}
+.cls{
+    width: 1320px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.9;
+    filter: blur(20px);
+
+}
+.loginfont{
+    color: rgb(140, 137, 137);
+}
+.loginform
+{
+    position: relative;
+    bottom: 450px;
+
+}
+
+.imj{
+    height: 500px;
+    opacity: 0.9;
+    filter: blur(8px);
+}
+.app{
+    position: relative;
+
+}
+.artistimg{
+        width: 100%;
+        height: 500px;
+        filter: blur(10px);
+        opacity: 0.2;
+  } 
+
+.images{
+    filter: blur(10px);
+    opacity: 0.9;
+}
+.for{
+    position: relative;
+    bottom: 700px;
+}
+.imgg{
+    width: 100%;
+    opacity: 0.9;
+    filter: blur(10px);
+}
+#rw{
+    position: relative;
+    bottom: 600px;
+}
+#row1{
+    position: relative;
+    bottom: 600px;
+}
+
+.firstrow{
+    position: absolute;
+    top: 130px;
+}
+.secondrow
+{
+    position: relative;
+    bottom: 600px;    
+}
+.trs{
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    
+}
+.accordionbtns{
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.accordiontrans{
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.inttrs{
+    color: rgb(119, 109, 109);
+    background-color: rgb(17, 15, 15);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.inttrs:focus{
+    box-shadow: none;
+    background: transparent;
+    color: rgb(172, 167, 167);
+    background-color: rgb(17, 15, 15);
+    border: 1px solid purple;
+}
+.spans{
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.trs:focus{
+    box-shadow: none;
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+}
+.column{
+    position: relative;
+    bottom: 500px;
+    background-color: rgb(17, 15, 15);
+}
+.op{
+    color: rgb(151, 149, 149);
+    font-size: 35px;
+}
+.logininput{
+    color: rgb(151, 149, 149);
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.logininput:focus{
+    box-shadow: none;
+    background-color: rgb(240, 228, 228);
+    color: rgb(240, 228, 228);
+    background: transparent;
+}
+.logininput::placeholder{
+    color: rgb(148, 138, 138);
+}
+.crd{
+    background-color: rgb(17, 15, 15);
+}
+.bt{
+    background-color: black;
+}
+.inbg{
+    background-color: rgb(17, 15, 15);
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+}
+.inbg:focus{
+    background-color: rgb(17, 15, 15);
+    color: white;
+    box-shadow: none;
+}
+.inbg::placeholder{
+    color: rgb(84, 78, 78);
+    font-size: 15px;
+}
+.slct{
+    background-color: rgb(17, 15, 15);
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.slct:focus{
+    box-shadow: none;
+}
+.spa{
+    background-color: rgb(17, 15, 15);
+    font-size: 20px;
+    position: relative;
+    right: 1px;
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+}
+.c{
+    position: relative;
+    right: 8px;
+}
+.as{
+    width: 200px;
+    height: 400px;
+    object-fit: fill;
+}
+
+.RowBorder{
+    border: 1px solid turquoise;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.ButtOn{
+    height: 50px;
+    bottom: 4px;
+    position: relative;
+}
+
+.Brand{
+    color: turquoise;
+    font-size: 25px;
+}
+
+.content{
+    background-color:#0c0b0b;
+
+}
+.icn{
+    color: turquoise;
+}
+.clr{
+    color: rgb(84, 78, 78);
+}
+
+.blt{
+    background-color: rgb(22, 20, 20);
+    box-shadow: 20px 20px 200px rgb(0, 0, 0);
+    position: relative;
+    top: 6px;
+}
+.inpbr{
+    background-color: rgb(24, 20, 20);
+}
+.accr{
+    background-color: rgb(17, 15, 15);
+
+}
+.acch{
+    color:rgb(174, 33, 94);
+}
+.inwit{
+    width: 50px;
+}
+.ps{
+    position: relative;
+    top: 31px;
+}
+.ps1{
+    position: relative;
+    bottom: 31px;
+}
+.stl{
+    font-family: 'Courier New', Courier, monospace;
+}
+.none{
+    box-shadow: 0px 10px 400px gainsboro;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;    
+    box-shadow: 10px 10px 400px;
+    height: 50px;
+    width: 480px;
+    text-align: left;
+}
+.bxs{
+    box-shadow: 10px 100px 200px rgb(116, 106, 111);
+
+
+}
+
+.fnt{
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 8px;
+
+}
+
+.inf{
+    width: 500px;
+    letter-spacing: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.style{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+.sttl{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 10px;
+}
+
+.shd{
+    background-color: rgb(22, 20, 20);
+    box-shadow: 20px 20px 200px rgb(90, 86, 86);
+    position: relative;
+    top: 4px;
+}
+.brdr{
+    border-left: 1px solid white;
+    height: 300px;
+}
+.slcbrdr{
+    border: 1px solid turquoise;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.hiderow{
+    height: 200px;
+    background-color: rgb(17, 15, 15);
+    box-shadow: 0px 300px 400px rgb(115, 135, 132);
+    box-shadow: 0px 300px 400px rgb(86, 237, 227);
+    border-radius: 5px;
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+
+}
+.btns{
+    background-color: rgb(17, 15, 15);
+    color: rgb(151, 149, 149);
+    background-color: rgb(36, 33, 33);
+    background: transparent;
+}
+.btns:hover{
+    background: turquoise;
+}
+
+.btt{
+    background-color: rgb(255, 0, 255);
+}
+.crds{
+    background-color: rgb(17, 15, 15);
+}
+
+.mkninp::placeholder{
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+.mkninp:focus{
+    color: gray
+}
+.fiverow{
+    position: absolute;
+    top: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.artistapp{
+    position: relative;
+}
+.artrow{
+    position: relative;
+    bottom: 450px;
+}
+.css{
+    color: rgb(220, 207, 207);
+
+}
+
+.rowart{
+   position: absolute;
+
+}
+.cards{
+    letter-spacing: 5px;
+    color: black;
+    
+}
+.Rows{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.themes{
+    width: 1500px;
+    height: 500px;
+    filter: blur(4px);
+    opacity: 0.5;
+
+}
+.AdminNav{
+    position: relative;
+    bottom: 450px;
+    text-align: center;
+}
+.AdminNavLi
+{
+    border: 1px solid;
+    border-radius: 10px;
+    background: transparent;
+    text-align: center;
+    
+}
+.mainImage{
+    position: absolute;
+ 
+}
+
+.them{
+    background-color: rgb(17, 15, 15);
+    position: relative;
+    bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    img {
+      width: 480px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .btn {
+      width: 700px;
+    }
+  } 
+
+  @media screen and (max-width: 992px) {
+    .aaa {
+      width: 260px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .Image {
+      width: 600px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .lgn {
+      width: 230px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 20px;
+    user-select: none;
+}
+[type=radio]
+{
+    display: none;
+}
+#slider{
+    height: 300px;
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    object-fit: contain;
+}
+
+#slider label{
+    margin: auto;
+    width: 800px;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide2, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3),0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15,0,-100px);
+}
+
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide2, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5{
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(0,0,0);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide3, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
